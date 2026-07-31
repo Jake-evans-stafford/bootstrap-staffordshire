@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "${{ env.NODE }}"
           cache: npm
@@ -40,7 +40,7 @@ jobs:
         run: npm run docs-html-validate
 
       - name: Run linkinator
-        uses: JustinBeckwith/linkinator-action@af984b9f30f63e796ae2ea5be5e07cb587f1bbd9 # v2.3
+        uses: JustinBeckwith/linkinator-action@36a0bfbfecd5e237e8f8531537a693616c505faf # v2.4.5
         with:
           paths: _site
           recurse: true
